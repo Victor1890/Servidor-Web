@@ -6,7 +6,7 @@ const path = require('path');
 
 
 // settings
-app.set('port', process.env.PORT || 3000);// si hay un puerto definido en el sistema, úsalo; sino usa el 3000
+app.set('port', process.env.PORT || 8080);
 app.set('json spaces', 2);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
@@ -15,8 +15,6 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
-
-// middlewares - funciones que procesan datos antes que el servidor los reciba
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
